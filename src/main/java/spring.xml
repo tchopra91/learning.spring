@@ -18,11 +18,8 @@
         </property>
     </bean>
 
-    <bean id="pointOrigin" class="com.spring.learning.Point">
+    <bean id="pointOrigin" class="com.spring.learning.Point" name="pointA">
         <property name="x" value="0" />
         <property name="y" value="0" />
     </bean>
-
-    <alias name="pointOrigin" alias="pointA" />
-
 </beans>
