@@ -3,19 +3,19 @@
 
 <beans>
     <bean id="triangle" class="com.spring.learning.Triangle">
-        <constructor-arg ref="pointOrigin" />
-        <constructor-arg>
+        <property name="pointA" ref="pointOrigin" />
+        <property name="pointB">
             <bean class="com.spring.learning.Point">
                 <property name="x" value="20" />
                 <property name="y" value="0" />
             </bean>
-        </constructor-arg>
-        <constructor-arg>
+        </property>
+        <property name="pointC">
             <bean class="com.spring.learning.Point">
                 <property name="x" value="0" />
                 <property name="y" value="20" />
             </bean>
-        </constructor-arg>
+        </property>
     </bean>
 
     <bean id="pointOrigin" class="com.spring.learning.Point">
