@@ -6,6 +6,10 @@ public class Triangle {
     private Point pointB;
     private Point pointC;
 
+    public Triangle() {
+        System.out.println("--> Triangle class constructor invoked.");
+    }
+
     public Point getPointA() {
         return pointA;
     }
