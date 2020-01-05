@@ -3,9 +3,9 @@
 
 <beans>
     <bean id="triangle" class="com.spring.learning.Triangle">
-        <property name="pointA" ref="pointOrigin" />
-        <property name="pointB" ref="pointX20" />
-        <property name="pointC" ref="pointY20" />
+        <constructor-arg ref="pointOrigin" />
+        <constructor-arg ref="pointX20" />
+        <constructor-arg ref="pointY20" />
     </bean>
 
     <bean id="pointOrigin" class="com.spring.learning.Point">
