@@ -11,8 +11,8 @@ public class DemoApplication {
         // Preparing core context using bean factory to initialize spring.
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
-        // In case, either scope is not set or set to singleton for Triangle bean,
-        // the constructor will be invoked once only.
+        // In case scope is set to prototype for Triangle bean,
+        // the constructor will be invoked every time bean instance is requested.
 
         // Getting bean instance from factory.
         Triangle triangle = (Triangle) context.getBean("triangle");
