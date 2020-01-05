@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans>
-    <bean id="parentTriangle" class="com.spring.learning.Triangle" abstract="true" init-method="onInit" destroy-method="onDestroy">
+<beans default-init-method="onInit" default-destroy-method="onDestroy">
+    <bean id="parentTriangle" class="com.spring.learning.Triangle" abstract="true">
         <property name="pointA" ref="pointA" />
     </bean>
 
