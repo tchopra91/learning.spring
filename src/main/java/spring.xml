@@ -12,8 +12,8 @@
     </bean>
 
     <bean id="pointOrigin" class="com.spring.learning.Point" name="pointA">
-        <property name="x" value="0" />
-        <property name="y" value="0" />
+        <property name="x" value="${pointA.x}" />
+        <property name="y" value="${pointA.y}" />
     </bean>
 
     <bean id="pointX20" class="com.spring.learning.Point" name="pointB">
@@ -29,5 +29,9 @@
     <alias name="pointY20" alias="pointC" />
 
     <bean class="com.spring.learning.DisplayNameBeanPostProcessor" />
+
     <bean class="com.spring.learning.MyBeanFactoryPostProcessor" />
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value='points-config.properties' />
+    </bean>
 </beans>
