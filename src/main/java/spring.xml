@@ -3,6 +3,6 @@
 
 <beans>
     <bean id="triangle" class="com.spring.learning.Triangle">
-        <property name="type" value="triangle" />
+        <constructor-arg index="0" value="triangle" />
     </bean>
 </beans>
