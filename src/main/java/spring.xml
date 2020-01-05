@@ -2,14 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-    <bean id="triangle" class="com.spring.learning.Triangle">
-        <property name="points">
-            <list>
-                <ref bean="pointOrigin" />
-                <ref bean="pointX20" />
-                <ref bean="pointY20" />
-            </list>
-        </property>
+    <bean id="triangle" class="com.spring.learning.Triangle" autowire="byName">
     </bean>
 
     <bean id="pointOrigin" class="com.spring.learning.Point" name="pointA">
@@ -17,7 +10,7 @@
         <property name="y" value="0" />
     </bean>
 
-    <bean id="pointX20" class="com.spring.learning.Point">
+    <bean id="pointX20" class="com.spring.learning.Point" name="pointB">
         <property name="x" value="20" />
         <property name="y" value="0" />
     </bean>
@@ -26,4 +19,6 @@
         <property name="x" value="0" />
         <property name="y" value="20" />
     </bean>
+
+    <alias name="pointY20" alias="pointC" />
 </beans>
