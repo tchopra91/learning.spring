@@ -3,13 +3,13 @@
 
 <beans>
     <bean id="triangle" class="com.spring.learning.Triangle">
-        <constructor-arg>
+        <property name="points">
             <list>
                 <ref bean="pointOrigin" />
                 <ref bean="pointX20" />
                 <ref bean="pointY20" />
             </list>
-        </constructor-arg>
+        </property>
     </bean>
 
     <bean id="pointOrigin" class="com.spring.learning.Point" name="pointA">

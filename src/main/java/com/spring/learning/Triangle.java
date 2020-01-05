@@ -4,7 +4,11 @@ public class Triangle {
 
     private Point[] points;
 
-    public Triangle(Point[] points) {
+    public Point[] getPoints() {
+        return points;
+    }
+
+    public void setPoints(Point[] points) {
         this.points = points;
     }
 
