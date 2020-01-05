@@ -1,7 +1,12 @@
 package com.spring.learning;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
+public class Triangle implements ApplicationContextAware {
+
+    private ApplicationContext context;
     private Point pointA;
     private Point pointB;
     private Point pointC;
@@ -35,9 +40,18 @@ public class Triangle {
     }
 
     public void draw() {
+        this.pointA = (Point) this.context.getBean("pointA");
+        this.pointB = (Point) this.context.getBean("pointB");
+        this.pointC = (Point) this.context.getBean("pointC");
+
         System.out.println("Triangle points::");
         System.out.println("Point A (" + this.getPointA().getX() + ", " + this.getPointA().getY() + ")");
         System.out.println("Point B (" + this.getPointB().getX() + ", " + this.getPointB().getY() + ")");
         System.out.println("Point C (" + this.getPointC().getX() + ", " + this.getPointC().getY() + ")");
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.context = applicationContext;
     }
 }
