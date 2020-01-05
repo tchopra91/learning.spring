@@ -3,7 +3,9 @@
 
 <beans>
     <bean id="triangle" class="com.spring.learning.Triangle">
-        <property name="pointA" ref="pointA" />
+        <property name="pointA">
+            <idref bean="pointOrigin"/>
+        </property>
         <property name="pointB">
             <bean class="com.spring.learning.Point">
                 <property name="x" value="20" />
