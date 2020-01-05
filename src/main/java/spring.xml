@@ -27,4 +27,6 @@
     </bean>
 
     <alias name="pointY20" alias="pointC" />
+
+    <bean class="com.spring.learning.DisplayNameBeanPostProcessor" />
 </beans>

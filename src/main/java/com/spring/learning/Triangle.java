@@ -1,8 +1,5 @@
 package com.spring.learning;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
 public class Triangle {
 
     private Point pointA;
