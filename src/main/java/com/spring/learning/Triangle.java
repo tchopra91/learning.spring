@@ -3,7 +3,7 @@ package com.spring.learning;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle {
 
     private Point pointA;
     private Point pointB;
@@ -44,13 +44,11 @@ public class Triangle implements InitializingBean, DisposableBean {
         System.out.println("Point C (" + this.getPointC().getX() + ", " + this.getPointC().getY() + ")");
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
+    public void onInit() {
         System.out.println("---> Invoking after initialization of Triangle bean");
     }
 
-    @Override
-    public void destroy() throws Exception {
+    public void onDestroy() {
         System.out.println("---> Invoking before destruction of Triangle bean");
     }
 }
