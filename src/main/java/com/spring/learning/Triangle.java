@@ -1,10 +1,9 @@
 package com.spring.learning;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle {
+public class Triangle implements InitializingBean, DisposableBean {
 
     private Point pointA;
     private Point pointB;
@@ -43,5 +42,15 @@ public class Triangle {
         System.out.println("Point A (" + this.getPointA().getX() + ", " + this.getPointA().getY() + ")");
         System.out.println("Point B (" + this.getPointB().getX() + ", " + this.getPointB().getY() + ")");
         System.out.println("Point C (" + this.getPointC().getX() + ", " + this.getPointC().getY() + ")");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("---> Invoking after initialization of Triangle bean");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("---> Invoking before destruction of Triangle bean");
     }
 }
