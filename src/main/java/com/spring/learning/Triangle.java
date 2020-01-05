@@ -1,5 +1,7 @@
 package com.spring.learning;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Triangle {
 
     private Point pointA;
@@ -14,6 +16,7 @@ public class Triangle {
         return pointA;
     }
 
+    @Required
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }
