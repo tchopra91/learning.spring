@@ -2,12 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans default-init-method="onInit" default-destroy-method="onDestroy">
-    <bean id="parentTriangle" class="com.spring.learning.Triangle" abstract="true">
-    </bean>
-
-    <bean id="triangle" class="com.spring.learning.Triangle" parent="parentTriangle">
-        <property name="pointB" ref="pointB" />
-        <property name="pointC" ref="pointC" />
+    <bean id="triangle" class="com.spring.learning.Triangle">
     </bean>
 
     <bean id="pointOrigin" class="com.spring.learning.Point" name="pointA">
@@ -31,5 +26,5 @@
         <property name="locations" value='points-config.properties' />
     </bean>
 
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 </beans>

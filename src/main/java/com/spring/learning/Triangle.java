@@ -1,6 +1,6 @@
 package com.spring.learning;
 
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Triangle {
 
@@ -16,7 +16,7 @@ public class Triangle {
         return pointA;
     }
 
-    @Required
+    @Autowired
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }
@@ -25,6 +25,7 @@ public class Triangle {
         return pointB;
     }
 
+    @Autowired
     public void setPointB(Point pointB) {
         this.pointB = pointB;
     }
@@ -33,6 +34,7 @@ public class Triangle {
         return pointC;
     }
 
+    @Autowired
     public void setPointC(Point pointC) {
         this.pointC = pointC;
     }
