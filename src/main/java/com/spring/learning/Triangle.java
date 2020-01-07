@@ -1,6 +1,7 @@
 package com.spring.learning;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Triangle {
 
@@ -17,6 +18,7 @@ public class Triangle {
     }
 
     @Autowired
+    @Qualifier("triangle.pointA")
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }
@@ -26,6 +28,7 @@ public class Triangle {
     }
 
     @Autowired
+    @Qualifier("triangle.pointB")
     public void setPointB(Point pointB) {
         this.pointB = pointB;
     }
@@ -35,6 +38,7 @@ public class Triangle {
     }
 
     @Autowired
+    @Qualifier("triangle.pointC")
     public void setPointC(Point pointC) {
         this.pointC = pointC;
     }
