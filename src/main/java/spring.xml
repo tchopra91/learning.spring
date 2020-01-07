@@ -7,19 +7,16 @@
     http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
     <bean id="pointOrigin" class="com.spring.learning.Point">
-        <qualifier value="triangle.pointA" />
         <property name="x" value="${pointA.x}" />
         <property name="y" value="${pointA.y}" />
     </bean>
 
-    <bean id="pointX20" class="com.spring.learning.Point">
-        <qualifier value="triangle.pointB" />
+    <bean id="pointX20" class="com.spring.learning.Point" name="pointB">
         <property name="x" value="20" />
         <property name="y" value="0" />
     </bean>
 
-    <bean id="pointY20" class="com.spring.learning.Point">
-        <qualifier value="triangle.pointC" />
+    <bean id="pointY20" class="com.spring.learning.Point" name="pointC">
         <property name="x" value="0" />
         <property name="y" value="20" />
     </bean>
@@ -27,6 +24,8 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value='points-config.properties' />
     </bean>
+
+    <alias name="pointOrigin" alias="pointA" />
 
     <context:annotation-config />
     <context:component-scan base-package="com.spring.learning" />
