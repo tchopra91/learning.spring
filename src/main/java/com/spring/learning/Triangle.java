@@ -1,5 +1,8 @@
 package com.spring.learning;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -50,10 +53,12 @@ public class Triangle {
         System.out.println("Point C (" + this.getPointC().getX() + ", " + this.getPointC().getY() + ")");
     }
 
+    @PostConstruct
     public void onInit() {
         System.out.println("---> Invoking after initialization of Triangle bean");
     }
 
+    @PreDestroy
     public void onDestroy() {
         System.out.println("---> Invoking before destruction of Triangle bean");
     }
