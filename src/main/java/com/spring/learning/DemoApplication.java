@@ -12,8 +12,9 @@ public class DemoApplication {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         // Fetching greeting message from context.
-        String greetingMsg = context.getMessage("greeting", null, "Default greeting", null);
-        System.out.println("Greeting message :: " + greetingMsg);
+        // String greetingMsg = context.getMessage("greeting", null, "Default greeting",
+        // null);
+        // System.out.println("Greeting message :: " + greetingMsg);
 
         // Getting bean instance from factory.
         Triangle triangle = (Triangle) context.getBean("triangle");
