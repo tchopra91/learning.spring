@@ -1,5 +1,7 @@
 package com.spring.learning;
 
+import java.util.Locale;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
@@ -58,7 +60,7 @@ public class Triangle {
 
     public void draw() {
         System.out.println("Message source greeting from triangle class :: "
-                + messageSource.getMessage("greeting", null, "Default greeting", null));
+                + messageSource.getMessage("greeting", null, "Default greeting", Locale.FRENCH));
         System.out.println("Triangle points::");
         System.out.println("Point A (" + this.getPointA().getX() + ", " + this.getPointA().getY() + ")");
         System.out.println("Point B (" + this.getPointB().getX() + ", " + this.getPointB().getY() + ")");

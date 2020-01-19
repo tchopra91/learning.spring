@@ -30,7 +30,7 @@
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
             <list>
-                <value>messages.en.messages</value>
+                <value>messages.messages</value>
             </list>
         </property>
     </bean>
